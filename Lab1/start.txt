@@ -1,0 +1,14 @@
+docker-compose up --build -d
+ssh root@localhost -p 2222
+mapr
+cd /home/mapr/lab_1
+dir
+echo 'export PATH=$PATH:/opt/mapr/spark/spark-3.2.0/bin' > /root/.bash_profile
+source /root/.bash_profile
+apt-get update && apt-get install -y python3-distutils python3-apt
+wget https://bootstrap.pypa.io/pip/3.6/get-pip.py
+python3 get-pip.py
+pip install jupyter
+pip install pyspark
+
+jupyter-notebook --ip=0.0.0.0 --port=50001 --allow-root --no-browser
